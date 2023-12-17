@@ -1,0 +1,74 @@
+1. Display top 10 processes in descending order
+ps aux --sort=%cpu | head -n 11
+
+2. Display processes with highest memory usage.
+ps aux --sort=%mem | head -n 11
+
+3. Display current logged in user and logname.
+whoami
+logname
+
+4. Display current shell, home directory, operating system type, current path setting, current working directory.
+echo $SHELL
+echo $HOME
+uname -r
+echo $PATH
+pwd
+
+5. Display OS version, release number, kernel version.
+lsb_release -a
+
+6. Write a command to display the first 15 columns from each line in the file
+cut -c 1-15 file.txt
+
+7. cut specified columns from a file and display them
+awk'{print substr($0,2,5)}' file.txt
+
+8. Sort given file ignoring upper and lower case
+sort -f file.txt
+
+9. Displays only directories in current working directory.
+ls -d*/
+
+10. copying files from one place to another,
+cp 
+
+11. moving files from one place to another.
+
+
+12. Removing specific directory with various options
+
+
+13. list the numbers of users currently login in the system and then sort it.
+who | cut -f 1 -d' ' | sort
+
+14. Merge two files into one file
+cat file1.txt file2.txt > new.txt
+
+15. changes the access mode of one file
+chmod 755 file1.txt
+
+16. display the last ten lines of the file.
+tail -n 11
+
+17. to locate files in a directory and in a subdirectory.
+find $path -type f -name “hi.txt”
+
+18. This displays the contents of all files having a name starting with ap followed by
+any number of characters.
+cat ap*
+
+19. Rename any file aaa to aaa.aa1, where aa1 is the user login name.
+mv aaa.txt aaa1.$(whoami)
+
+20. Write a command to search the word ‘picture’ in the file and if found, the lines containing it would be displayed on the screen.
+grep 'picture' file1.txt
+
+21. Write a command to search for all occurrences of ‘Rebecca’ as well as ‘rebecca’ in file and display the lines which contain one of these words.
+grep -i 'rebecca\|Rebecca' file1.txt
+
+22. Write a command to search all four-letter words whose first letter is a ‘b’ and last letter, a ‘k’.
+grep -w '^b..k$' file1.txt
+
+23. Write a command to see only those lines which do not contain the search patterns
+grep -v 'pattern' file1.txt
