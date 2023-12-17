@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Initialize a mutex to 1
+
 int mutex = 1;
 
-// Number of full slots as 0
+
 int full = 0;
 
-// Number of empty slots as size of buffer
+
 int empty = 10, x = 0;
 
-// Function to produce an item and add it to the buffer
+
 void producer() {
     if (mutex == 1 && empty != 0) {
         --mutex;
@@ -24,7 +24,7 @@ void producer() {
     }
 }
 
-// Function to consume an item and remove it from buffer
+
 void consumer() {
     if (mutex == 1 && full != 0) {
         --mutex;
@@ -38,7 +38,7 @@ void consumer() {
     }
 }
 
-// Driver Code
+
 int main() {
     int n;
 
